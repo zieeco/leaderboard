@@ -1,6 +1,6 @@
-# webpack-template
+# Leaderboard
 
-This a demo project using webpack which is an open source javascript module bundler used to transform files like HTML, CSS, SASS, JAVASCRIPT, etc.
+leaderboard is an app that outputs the names and the score of the players and it uses API's to get all the informations.
 
 ## Live Demo Link
 - - [Live demo](https://zieeco.github.io/webpack-template/dist/index.html)
@@ -18,7 +18,7 @@ To get a local copy up and running:
 
 1. Clone this repository or download the Zip folder:
 
-**``git clone https://github.com/zieeco/webpack-template.git``**
+**``git clone https://github.com/zieeco/leaderboard.git``**
 
 2. Navigate to the location of the folder in your machine:
 
