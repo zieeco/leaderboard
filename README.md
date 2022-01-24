@@ -3,7 +3,7 @@
 leaderboard is an app that outputs the names and the score of the players and it uses API's to get all the informations.
 
 ## Live Demo Link
-- - [Live demo](https://zieeco.github.io/webpack-template/dist/index.html)
+- - [Live demo](https://zieeco.github.io/leaderboard/dist/index.html)
 
 ## Built With
 
