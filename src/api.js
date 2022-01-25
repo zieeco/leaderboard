@@ -6,7 +6,6 @@ const getUserScore = async () => {
 };
 
 const setUserScore = async (userScore) => {
-  console.log('I don taya ma guy', userScore);
   const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/166tll3CLk1QzxL0tLc0/scores',
     {
       method: 'POST',
