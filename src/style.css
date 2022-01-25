@@ -69,4 +69,6 @@ button {
   padding: 8px 6px;
   text-align: center;
   border: 2px solid black;
+  cursor: pointer;
+  box-shadow: 0.17em 0.17em;
 }

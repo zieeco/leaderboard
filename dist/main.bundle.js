@@ -110,13 +110,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/api.js":
+/*!********************!*\
+  !*** ./src/api.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getUserScore\": () => (/* binding */ getUserScore),\n/* harmony export */   \"setUserScore\": () => (/* binding */ setUserScore)\n/* harmony export */ });\n// get scores\n\n// set scores\n\nconst getUserScore = async () => {\n  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/dYc0z7DZ2wGyy9DQMplT/scores');\n\n  const { result } = await response.json();\n  return result;\n};\n\nconst setUserScore = async (userScore) => {\n  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/dYc0z7DZ2wGyy9DQMplT/scores',\n    {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify(userScore),\n    });\n\n  const { result } = await response.json();\n  return result;\n};\n\n\n\n\n//# sourceURL=webpack://leaderboard/./src/api.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render.js */ \"./src/render.js\");\n\n\n\nconst arr = [\n  {\n    user: 'Name',\n    score: '100',\n  },\n\n  {\n    user: 'Name',\n    score: '200',\n\n  },\n\n  {\n    user: 'Name',\n    score: '300',\n\n  },\n\n  {\n    user: 'Name',\n    score: '400',\n  },\n];\n\n(0,_render_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(arr);\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render.js */ \"./src/render.js\");\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api.js */ \"./src/api.js\");\n\n\n\n\nconst refreshBtn = document.querySelector('.refresh-btn');\n\nconst form = document.querySelector('form');\n\nrefreshBtn.addEventListener('click', async () => {\n  const result = await (0,_api_js__WEBPACK_IMPORTED_MODULE_2__.getUserScore)();\n  (0,_render_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(result);\n});\n\nform.addEventListener('submit', async () => {\n  const { userName, userScore } = form.elements;\n  const game = {\n    user: userName.value,\n    score: userScore.value,\n  };\n  form.reset();\n  await (0,_api_js__WEBPACK_IMPORTED_MODULE_2__.setUserScore)(game);\n});\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
 
 /***/ }),
 
@@ -126,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst render = (arr) => {\n  const container = document.querySelector('ul');\n  arr.forEach((game, index) => {\n    const li = document.createElement('li');\n    li.textContent = `${game.user}: ${game.score}`;\n    li.id = index;\n    container.appendChild(li);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (render);\n\n\n//# sourceURL=webpack://leaderboard/./src/render.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst render = (arr) => {\n  const container = document.querySelector('ul');\n  container.innerHTML = '';\n  arr.forEach((game, index) => {\n    const li = document.createElement('li');\n    li.textContent = `${game.user}: ${game.score}`;\n    li.id = index;\n    container.appendChild(li);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (render);\n\n\n//# sourceURL=webpack://leaderboard/./src/render.js?");
 
 /***/ })
 
