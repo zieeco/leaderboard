@@ -11,7 +11,8 @@ const showScores = async () => {
   render(result);
 };
 
-form.addEventListener('submit', async () => {
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
   const { userName, userScore } = form.elements;
   const game = {
     user: userName.value,
