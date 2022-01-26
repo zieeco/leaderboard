@@ -1,4 +1,5 @@
-import './style.css';
+import './css/style.css';
+import './css/reset.css';
 import render from './render.js';
 import { getUserScore, setUserScore } from './api.js';
 
