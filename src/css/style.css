@@ -1,0 +1,186 @@
+:root {
+  --color-white: #fff;
+  --bg-secondary: #e14275;
+  --background: #1f0f2f;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  line-height: 24px;
+  font-weight: normal;
+  font-family: 'Balsamiq Sans', cursive;
+  font-style: normal;
+  background: var(--background);
+}
+
+.bg-secondary {
+  background: var(--bg-secondary);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+header .hd {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+header h1 {
+  word-break: break-all;
+}
+
+.h-hi {
+  height: 3.75rem;
+}
+
+header a {
+  padding: 8px;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 0.17em 0.17em 14px;
+  cursor: pointer;
+}
+
+.board {
+  font-size: 16pt;
+  font-family: 'Economica', sans-serif;
+  letter-spacing: 0.25em;
+}
+
+.lead {
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 16pt;
+  letter-spacing: 0.1em;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.flex-only {
+  display: flex;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.wrapper {
+  justify-content: center;
+  padding: 30px;
+  gap: 50px;
+  flex-direction: column;
+}
+
+.form-form,
+.list {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.list {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list .h-b {
+  gap: 12px;
+  justify-content: space-between;
+  padding: 8px 0;
+  align-items: center;
+}
+
+.list ul {
+  border: 2px solid white;
+}
+
+.list li {
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.list li:nth-child(even) {
+  background-color: gray;
+}
+
+.form {
+  margin-top: 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.form-form h2 {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.form input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid black;
+}
+
+.refresh-btn,
+form button {
+  /* width: fit-content; */
+  text-align: center;
+  border: 2px solid black;
+  color: black;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0.17em 0.17em 10px;
+}
+
+@media screen and (min-width: 992px) {
+  .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4% 10%;
+  }
+
+  .list {
+    width: 65%;
+  }
+
+  .form-form {
+    width: 35%;
+  }
+
+  .board {
+    font-size: 40pt;
+  }
+
+  .lead {
+    font-size: 32pt;
+    letter-spacing: 0.1em;
+  }
+
+  .h-hi {
+    height: 5.75rem;
+  }
+
+  .list li {
+    padding: 10px;
+  }
+
+  .fs-bg {
+    font-size: 40px;
+  }
+}
